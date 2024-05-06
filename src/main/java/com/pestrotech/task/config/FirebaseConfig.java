@@ -14,11 +14,22 @@ public class FirebaseConfig {
 
     @Bean
     public FirebaseApp firebaseApp() throws IOException {
-        FileInputStream serviceAccount = new FileInputStream("path/to/serviceAccountKey.json");
+        FileInputStream serviceAccount = new FileInputStream("D:\\Downloads\\pesto-tech-assessment-firebase-adminsdk-xv9wv-3a9dc8ec49.json");
 
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                 .build();
+
+//        FileInputStream serviceAccount =
+//                new FileInputStream("path/to/serviceAccountKey.json");
+
+//        FirebaseOptions options = new FirebaseOptions.Builder()
+//                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+//                .setDatabaseUrl("https://pesto-tech-assessment-default-rtdb.asia-southeast1.firebasedatabase.app")
+//                .build();
+//
+//        FirebaseApp.initializeApp(options);
+
 
         return FirebaseApp.initializeApp(options);
     }
